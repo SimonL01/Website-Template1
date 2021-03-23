@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Link to the html file all kinds of files needed. -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" /> <!-- This will allow me to use the Font classes to create icons -->
+    <link rel="stylesheet" href="css/utilities.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/template1.css">
+    <title>Simon Louveau's Platform</title>
+</head>
+<body>
+    <!-- Navbar -->
+    <!-- This will hold the Logo (h1) and the menu.-->
+    <!-- This is wrapped in a container, +- 10011 pixels so that it appears in a small container on the page-->
+    <div class="navbar">
+        <div class ="container flex"> <!-- If we use flex box on this div, we create a flex box container. This will make this h1 and the nav flex box items and wa can align them however we want. And flex after container is the utility class flex that is defined in style.css -->
+            <h1 class="logo">Simon Louveau</h1>
+            <nav> <!-- Nav Tag : Navigation-->
+                <ul> <!-- Unordered list-->
+                    <li><a href="index.html">Home</a></li> <!-- Shift + Hold + Down = Copy down-->
+                    <li><a href="features.html">Features</a></li>
+                    <li><a href="docs.html">Docs</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Showcase -->
+    <section class="showcase">
+       <div class="container grid"> <!-- Utility class of grid just like we did with flex so that we can use these flex and grid in multiple places. And we can specificaly customized the showcase grid as well. -->
+            <!-- We will have two grid items inside the grid container. -->
+            <!-- Command : ".showcase-text" creates a div -->
+            <div class="showcase-text text-center">
+                <h1>Motivated Learner</h1>
+                <p>Outlines</p>
+                <a href="features.html" class="btn btn-outline">Read More</a> <!-- Creates a button to another page. -->
+            </div>
+
+            <!-- Card for requesting data -->
+            <div class="showcase-form card">
+                <h2>Inquiries</h2>
+                <form>
+                    <div class="form-control">
+                        <input type="text" name="name"
+                        placeholder="Name"
+                        required>
+                    </div>
+                    <div class="form-control">
+                        <input type="text" name="Purpose"
+                        placeholder="Purpose"
+                        required>
+                    </div>
+                    <div class="form-control">
+                        <input type="email" name="email"
+                        placeholder="Email" 
+                        required>
+                    </div>
+                    <input type="submit" value="Send" class="btn btn-primary">
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="stats">
+        <div class="container">
+            <h3 class="stats-heading text-center text-dark my-1 lg">
+                Welcome to my website !
+            </h3>
+
+            <!-- The first grid class had only 2 columns, the grid-3 class changes the number of columns.-->
+            <div class="grid grid-3 text-center text-dark my-4">
+               <div>
+                   <i class="fas fa-book fa-3x text-dark"></i>
+                   <h3>1</h3>
+                   <p class="text-dark">Learn</p>
+               </div> 
+               <div>
+                   <i class="fas fa-upload fa-3x text-dark"></i>
+                   <h3>2</h3>
+                   <p class="text-dark">Share</p>
+               </div> 
+               <div>
+                   <i class="fas fa-project-diagram fa-3x text-dark"></i>
+                   <h3>3</h3>
+                   <p class="text-dark">Link</p>
+               </div> 
+            </div>
+        </div>
+    </section>
+
+    <!-- CLI -->
+    <section class="cli">
+        <div class="container py-2">
+            <img src="images/Image_Ulg.jpg" alt="">
+            <div class="card text-center">
+                <h3>Engineering Student</h3>
+            </div>
+            <div class="card text-center">
+                <h3>Bac 2 IT orientation</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cloud -->
+    <section class="cloud bg-dark my-2 py-2">
+        <div class="container grid">
+            <div class="text-center">
+                <h2 class="lg">Every Problem is an opportunity</h2>
+                <p class="lead my-1">See documentation about specified languages</p>
+                <a href="docs.html" class="btn btn-primary">Read More</a>
+            </div>
+            <img src="images/cloud.png" alt="">
+        </div>
+    </section>
+
+    <!-- Languages -->
+    <section class="languages">
+        <h2 class="md text-center my-2">
+            Learned Programming Languages
+        </h2>
+        <div class="container flex">
+            <div class="card">
+                <h4>Python</h4>
+                <img src="images/logos/python.png" alt="">
+            </div>
+            <div class="card">
+                <h4>C</h4>
+                <img src="images/logos/c.jpg" alt="">
+            </div>
+            <div class="card">
+                <h4>Java</h4>
+                <img src="images/logos/java.jpg" alt="">
+            </div>
+            <div class="card">
+                <h4>Latex</h4>
+                <img src="images/logos/Latex.png" alt="">
+            </div>
+            <div class="card">
+                <h4>Matlab</h4>
+                <img src="images/logos/Matlab.jpg" alt="">
+            </div>
+        </div>
+    </section> 
+
+    <!-- Footer -->
+    <footer class="footer bg-dark py-5">
+        <div class="container grid grid-3">
+            <div>
+                <h1>
+                    Simon Louveau
+                </h1>
+                <p>Copyright &copy; 2021 </p>
+            </div> 
+            <nav>
+                <ul>
+                    <li><a class="container logo" href="index.html">Home</a></li>
+                    <li><a class="container logo" href="index.html">Features</a></li>
+                    <li><a class="container logo" href="index.html">Docs</a></li>
+                </ul>
+            </nav>
+            <div class="social"> <!-- For now, it points to nowhere -->
+                <a href="https://github.com/SimonL01"><i class="fab fa-github fa-2x"></i></a>
+                <!-- <a href="#"><i class="fab fa-facebook fa-2x"></i></a> -->
+                <a href="https://www.instagram.com/simon_louveau/"><i class="fab fa-instagram fa-2x"></i></a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
