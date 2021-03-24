@@ -212,6 +212,11 @@ pre {
     width:600px;
 }
 
+.cli .container img{
+    height:auto;
+    width:auto;
+}
+
 /* Cloud */
 
 .cloud .grid {
@@ -406,6 +411,8 @@ pre {
       }
 
     .cli .grid img {
-        image-rendering:auto;
+        height:auto;
+        max-width:100%;
+        width:auto;
     }
 }
