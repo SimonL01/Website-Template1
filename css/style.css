@@ -1,0 +1,411 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+/* Defining variables in CSS. */
+
+/* Root scope : the variable defined is available everywhere. */
+/* Command : "--" is the synthaxe for customs properties. */
+:root {
+    --primary-color: #4aa160; /* Therefore, changing the variable here changes the variable everywwhere*/
+    --secondary-color: #267544;
+    --dark-color: #033a31;
+    --light-color: #f4f4f4;
+    --success-color: #5cb85c;
+    --error-color: #d9534f;
+
+}
+
+/* Editing the basic things. */
+/*
+Add a reset with {} universal selecter.
+*/
+* {
+    box-sizing: border-box;/* It allows to add padding, borders, etc. without having to add to the width of an element*/
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: #333; /* This changes the color of the font.*/
+    line-height: 1.6; /* This changes the span between lines, how spread they are. */
+}
+
+html, body {
+    height: 100%;
+}
+  
+.full-height-width {
+    height: 100%;
+    width: 100%;
+}
+
+ul {
+    list-style-type : none; /* Make sure we don't see the bullet points. */
+}
+
+/* Use as links to the other pages. */
+a {
+    text-decoration: none; /* Get rid of the underline feature */
+    color: #333;
+}
+
+/* Concerning Headings : */
+h1, h2{
+    font-weight: 300; /* Change the boldness of the font*/
+    line-height: 1.2; /* Changes the span between the lines in the headings this time. */
+    margin: 10px 0; /* Set a margin on top and bottom of 10 pixels, left and right 0. */
+}
+
+/* Setting the paragraphes details. */
+p {
+    margin: 10px 0; /* Paragraphs aren't squeeshed together. */
+}
+
+img{
+    width: 100%; /* This keeps the images within their container. Even if it is a large image, it will not bust out of the container but take 100% of the size of the container. */
+}
+
+code,
+pre {
+  background: #333;
+  color: #fff;
+  padding: 10px;
+}
+
+.hidden {
+  visibility: hidden;
+  height: 0;
+}
+
+/* Editing a class. */
+
+/* Navbar */
+.navbar{
+    background-color: var(--dark-color);
+    color: #fff;
+    height: 70px; /* Sets the navbar height. */
+}
+
+.navbar ul{
+    display: flex; /* Ligning up hozizontaly */
+}
+
+.navbar a{
+    color: #fff;
+    padding: 10px;
+    margin: 0 5px;
+}
+
+/* Settings features for when we hover links in the navbar. */
+.navbar a:hover {
+    border-bottom: 2px #fff solid;
+}
+
+/* If the class flex is inside the navbar, then here are the changes. */
+.navbar .flex{
+    justify-content: space-between
+}
+
+/* Showcase */
+.showcase{
+    height: 400px;
+    background-color: var(--primary-color);
+    color:#fff;
+    position: relative;
+}
+
+.showcase h1 {
+    font-size: 40px;
+}
+
+.showcase p {
+    margin: 20px 0;
+}
+
+.showcase .grid {
+    overflow: visible; /* Take away the default scrollbar. */
+    grid-template-columns: 55% auto;
+    gap: 30px; /* Widden the gap between the columns. */
+}
+
+.showcase-text {
+    animation: slideInFromLeft 1s ease-in;
+}
+
+.showcase-form {
+    position: relative; /* Allows to use top, bottom, right, left properties.*/
+    top: 60px;
+    height: 350px; /* Scrollbar visible by default */
+    width: 400px;
+    padding: 40px;
+    z-index: 100; /* Make sure it is always in front. */
+    justify-self: flex-end; /* Push the form to the right. */
+    animation: slideInFromRight 1s ease-in;
+}
+
+/* Remember that form-control wrapps the inputs. */
+.showcase-form .form-control {
+    margin:30px 0;
+}
+
+/* Targeting the special inputs we want to customize. */
+.showcase-form input[type='text'],
+.showcase-form input[type='email']{
+    border:0;
+    border-bottom: 1px solid #b4becb;
+    width: 100%;
+    padding: 3px;
+    font-size: 16px;
+}
+
+.showcase-form input:focus {
+    outline: none; /* No more border when clicking to state an input.*/
+}
+
+/* Pseudo selecter classes */
+.showcase::before,.showcase::after {
+    content: '';
+    position: absolute;
+    height: 100px;
+    bottom: -70px;
+    right: 0;
+    left: 0;
+    background: #fff;
+    /* background: red; */ /* This is to visualize where is this class located. */
+    transform: skewY(3deg);
+    -webkit-transform: skewY(3deg); 
+    -moz-transform: skewY(3deg);
+    -ms-transform: skewY(3deg);
+}
+
+/* Stats */
+
+.stats {
+    padding-top: 100px;
+    animation: slideInFromBottom 1s ease-in;
+}
+
+.stats-heading {
+    max-width: 500px; /* Squeeze the text in the stats heading. */
+    margin : auto; /* Put it in the middle. */
+}
+
+.stats .grid h3 {
+   font-size: 35px; 
+}
+
+.stats .grid p {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* CLI */
+
+.cli .grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+
+.cli .grid > *:first-child {
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 2;
+    width:600px;
+}
+
+/* Cloud */
+
+.cloud .grid {
+    grid-template-columns: 4fr 3fr;
+}
+
+/* Languages */
+.languages .flex {
+    flex-wrap: wrap;
+}
+.languages .card {
+    text-align:center;
+    margin: 18px 10px 40px;
+    width:150px;
+    transition: transform 0.2s ease-in; /* When hovering the logos, it is a bit more smooth and slower. */
+}
+
+.languages .card h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.languages .card:hover {
+    transform: translateY(-15px); /* Moves the logos when hovering. */
+}
+
+/* Features */
+.features-head img,
+.docs-head img {
+  width: 200px; /* Set the image that is located in the feature-head class and docs-head */
+  justify-self: flex-end; /* justify-self -> justify only one item, and flex-end -> push the item to the end of the flex. */
+}
+
+.features-sub-head img {
+  width: 300px;
+  justify-self: flex-end;
+}
+
+/* Grab a card, the initial i (icon)*/
+.features-main .card > i {
+  margin-right: 20px; /* Put some space between the cards. */
+}
+
+.features-main .grid {
+  padding: 30px;
+}
+
+/* Takes the first child and span it over the grid of 3 columns */
+.features-main .grid > *:first-child {
+  grid-column: 1 / span 3;
+}
+
+.features-main .grid > *:nth-child(2) {
+  grid-column: 1 / span 2;
+}
+
+/* Docs */
+.docs-main h3 {
+  margin: 20px 0;
+}
+
+.docs-main .grid {
+  grid-template-columns: 1fr 2fr;
+  align-items: flex-start;
+  overflow: visible; /* Takes away the default scrollbar. */
+}
+
+.docs-main nav li {
+    font-size: 17px;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+    border-bottom: 1px #ccc solid;
+}
+
+.docs-main a:hover {
+  font-weight: bold;
+}
+
+/* Footer */
+
+.footer .social a {
+    margin: 0 10px;
+}
+
+/* Animations */
+@keyframes slideInFromLeft {
+    0% {
+      transform: translateX(-100%);
+    }
+  
+    100% {
+      transform: translateX(0);
+    }
+}
+  
+@keyframes slideInFromRight {
+    0% {
+      transform: translateX(100%);
+    }
+  
+    100% {
+      transform: translateX(0);
+    }
+}
+  
+@keyframes slideInFromTop {
+    0% {
+      transform: translateY(-100%);
+    }
+  
+    100% {
+      transform: translateX(0);
+    }
+}
+  
+@keyframes slideInFromBottom {
+    0% {
+      transform: translateY(100%);
+    }
+  
+    100% {
+      transform: translateX(0);
+    }
+}
+
+/* Tablets and under */
+
+/* Everything that is under 768 pixels is gonna be styled here*/
+@media(max-width: 768px) {
+    .grid, .showcase .grid, .stats .grid, .cli .grid, .cloud .grid, .features-main .grid,
+    .docs-main .grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
+
+    .showcase {
+        height: auto;
+    }
+
+    .showcase-text {
+        text-align: center;
+        margin-top: 40px;
+        animation: slideInFromTop 1s ease-in;
+    }
+
+    .showcase-form {
+        justify-self: center;
+        margin: auto;
+        animation: slideInFromBottom 1s ease-in;
+    }
+
+    .cli .grid > *:first-child {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .features-head,
+  .features-sub-head,
+  .docs-head {
+    text-align: center;
+  }
+
+  .features-head img,
+  .features-sub-head img,
+  .docs-head img {
+    justify-self: center;
+  }
+
+  .features-main .grid > *:first-child,
+  .features-main .grid > *:nth-child(2) {
+    grid-column: 1;
+  }
+}
+
+/* Mobile */
+@media(max-width: 500px) {
+    .navbar {
+        height: 110px;
+    }
+
+    .navbar .flex {
+        flex-direction: column;
+    }
+
+    .navbar ul {
+        padding: 10px;
+        background-color: rgba(0,0,0,0.1);
+    }
+
+    .showcase-form {
+        width: 300px;
+      }
+
+    .cli .grid img {
+        image-rendering:auto;
+    }
+}
